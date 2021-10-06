@@ -31,11 +31,13 @@ def on_message(client, userdata, msg):
             print(e)
             pass
 
+address = '13.209.41.37'
+
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect('web.dgsw.kr', 1883)
+client.connect(address, 1883)
 client.loop_start()
 
 regex = b'^H(.{2})T(.{2})S(.{2})C(.{4})\n$'
